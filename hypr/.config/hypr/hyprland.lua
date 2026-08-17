@@ -206,3 +206,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("anki &")
     hl.exec_cmd("zotero &")
 end)
+
+-- Package Manager Menu (Toggle with MainMod + P)
+local pkgMenuScript = os.getenv("HOME") .. "/.config/rofi/scripts/pkg-menu.sh"
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("pkill -x rofi || " .. pkgMenuScript))
