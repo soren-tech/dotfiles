@@ -1,0 +1,103 @@
+
+# ==========================================================
+# MAKO CONFIG — Catppuccin Mocha (Matched to Kitty)
+# Synced with kitty background_opacity 0.85
+# Global timeout: 30 seconds (forced)
+# Optimized for Hyprland blur
+# ==========================================================
+
+
+# ----------------------------------------------------------
+# 1. GLOBAL LAYOUT
+# ----------------------------------------------------------
+
+# Same font as kitty
+font=JetBrainsMono Nerd Font 12
+
+# Notification width
+width=420
+
+# Space from screen edges
+margin=12
+
+# Inner spacing (like kitty window_padding_width)
+padding=16
+
+# Rounded corners (soft modern look)
+border-radius=12
+
+# Border thickness
+border-size=2
+
+# Maximum stacked notifications
+max-visible=5
+
+# Position on screen
+anchor=top-right
+
+# Render above windows
+layer=overlay
+
+
+# ----------------------------------------------------------
+# 2. COLORS — Catppuccin Mocha (Synced to Kitty)
+# ----------------------------------------------------------
+
+# Background with 85% opacity
+# kitty background: #1E1E2E
+# 85% alpha ≈ D9
+background-color=#1e1e2ed9
+
+# Text color (kitty foreground)
+text-color=#cdd6f4
+
+# Border (active_border_color from kitty)
+border-color=#b4befe
+
+# Progress bar (blue accent)
+progress-color=#89b4fa
+
+
+# ----------------------------------------------------------
+# 3. TIMEOUT BEHAVIOR
+# ----------------------------------------------------------
+
+# 30 seconds for ALL notifications
+default-timeout=10000
+
+# Ignore app-defined timeouts (force 30s rule)
+ignore-timeout=1
+
+
+# ----------------------------------------------------------
+# 4. URGENCY STYLING
+# ----------------------------------------------------------
+
+# Low urgency — subtle
+[urgency=low]
+border-color=#6c7086
+text-color=#bac2de
+
+
+# Normal urgency — default look
+[urgency=normal]
+border-color=#89b4fa
+
+
+# Critical urgency — Catppuccin red
+# Still disappears after 30s (forced globally)
+[urgency=critical]
+background-color=#1e1e2ee6
+border-color=#f38ba8
+text-color=#f38ba8
+default-timeout=30000
+
+
+# ----------------------------------------------------------
+# 5. OPTIONAL APP MATCHING EXAMPLES
+# ----------------------------------------------------------
+
+# Example: Make Spotify slightly narrower
+# [app-name=Spotify]
+# width=380
+

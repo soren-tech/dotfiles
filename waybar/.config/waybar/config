@@ -1,0 +1,100 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 4,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "custom/stopwatch"
+    ],
+    "modules-right": [
+        "tray",
+        "network",
+        "bluetooth",
+        "cpu",
+        "temperature",
+        "memory",
+        "disk#ssd",
+        "disk#hdd",
+        "clock"
+    ],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+
+    "network": {
+        "format-wifi": " ",
+        "format-ethernet": "󰈀 ",
+        "format-disconnected": "󰖪 ",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 5,
+        "on-click": "kitty -e nmtui"
+    },
+
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱",
+        "tooltip-format": "Bluetooth: {status}",
+        "tooltip-format-connected": "{device_alias} 󰂄",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "on-click": "kitty -e bluetuith"
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": true,
+        "interval": 2
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": " {temperatureC}°C",
+        "interval": 2
+    },
+
+    "memory": {
+        "format": " {}%",
+        "tooltip-format": "RAM: {used:0.1f}GB / {total:0.1f}GB",
+        "interval": 2
+    },
+
+    "disk#ssd": {
+        "format": "󰋊 {percentage_used}%",
+        "path": "/",
+        "tooltip-format": "SSD: {used} / {total}",
+        "interval": 60
+    },
+
+    "disk#hdd": {
+        "format": "󰋚 {percentage_used}%",
+        "path": "/mnt/hdd-storage",
+        "tooltip-format": "HDD: {used} / {total}",
+        "interval": 9600
+    },
+
+    "clock": {
+        "format": " {:%H:%M}",
+        "format-alt": " {:%Y-%m-%d}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
+    },
+
+    "custom/stopwatch": {
+        "format": "{}",
+        "interval": 1,
+        "exec": "$HOME/.config/waybar/stopwatch.sh status",
+        "signal": 8
+    }
+}

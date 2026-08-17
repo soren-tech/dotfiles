@@ -1,0 +1,73 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(30, 30, 46, 0.85);
+    color: #cdd6f4;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    background-color: transparent;
+    color: #7f849c;
+}
+
+#workspaces button.active {
+    color: #89b4fa;
+    background-color: rgba(137, 180, 250, 0.1);
+    border-radius: 6px;
+}
+
+#workspaces button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+#tray,
+#network,
+#bluetooth,
+#cpu,
+#memory,
+#temperature,
+#disk,
+#clock,
+#custom-stopwatch {
+    padding: 0 10px;
+    margin-right: 6px;
+    color: #cdd6f4;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+}
+
+/* Special state colors */
+#network.disconnected,
+#bluetooth.disabled,
+#bluetooth.off {
+    color: #f38ba8;
+}
+
+#bluetooth.connected {
+    color: #89b4fa;
+}
+
+#temperature.critical {
+    color: #f38ba8;
+}
+
+#clock {
+    margin-right: 10px;
+}
+
+/* Stopwatch Specific Accent Color Override */
+#custom-stopwatch {
+    color: #a6e3a1; /* Catppuccin Mocha Green */
+    margin-right: 0px;
+}

@@ -1,0 +1,88 @@
+/* ~/.config/rofi/themes/app-launcher.rasi
+   App launcher theme for Rofi + Hyprland + Matugen
+*/
+
+@import "../colors.rasi"
+
+/* If relative import ever fails, use this instead:
+   @import "/home/ms/.config/rofi/colors.rasi"
+*/
+
+/* Main Rofi window */
+window {
+    width: 760px;
+    padding: 18px;
+
+    background-color: @bg;
+
+    border: 2px solid;
+    border-color: @border-color;
+    border-radius: 10px; /* Matches your Hyprland rounding */
+}
+
+/* Main layout container */
+mainbox {
+    spacing: 14px;
+}
+
+/* Search bar */
+inputbar {
+    children: [ entry ];
+
+    padding: 12px;
+    border-radius: 8px;
+
+    background-color: @bg-alt;
+}
+
+/* Search input */
+entry {
+    placeholder: "Search applications...";
+    placeholder-color: @fg-dim;
+    text-color: @fg;
+}
+
+/* Application grid */
+listview {
+    lines: 4;
+    columns: 5;
+
+    spacing: 10px;
+    scrollbar: false;
+    fixed-height: false;
+}
+
+/* Each app entry */
+element {
+    orientation: vertical;
+
+    padding: 14px;
+    border-radius: 8px;
+
+    spacing: 10px;
+
+    background-color: transparent;
+    text-color: @fg;
+}
+
+/* Selected app entry */
+element selected {
+    background-color: @selected-bg;
+    text-color: @primary;
+}
+
+/* App icon */
+element-icon {
+    size: 44px;
+
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+
+/* App name */
+element-text {
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+
+    highlight: bold;
+}

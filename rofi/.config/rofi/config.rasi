@@ -1,0 +1,19 @@
+configuration {
+    /* General Behavior */
+    modes: [ "drun", "run", "window", "filebrowser" ];
+    terminal: "kitty"; /* Matches your hyprland.lua */
+    show-icons: true;
+    hover-select: true;
+    click-to-exit: true;
+    
+    /* Search & Sorting */
+    matching: "fuzzy";
+    sorting-method: "fzf";
+    sort: true;
+    
+    /* Display Formatting */
+    drun-display-format: "{name}";
+    window-format: "{w} · {c} · {t}";
+}
+
+

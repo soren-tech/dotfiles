@@ -1,0 +1,59 @@
+/* ~/.config/rofi/themes/power-menu.rasi */
+
+/* Import the Matugen generated colors */
+@theme "colors"
+
+* {
+    /* Ensure you have a Nerd Font installed for the icons to show */
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+window {
+    background-color: var(bg);
+    border: 2px solid;
+    border-color: var(border-color);
+    border-radius: 16px;
+    width: 350px;
+    padding: 20px;
+}
+
+mainbox {
+    children: [ listview ];
+    spacing: 10px;
+}
+
+listview {
+    dynamic: false;
+    lines: 5;
+    columns: 1;
+    fixed-height: false;
+    spacing: 8px;
+}
+
+element {
+    padding: 12px 15px;
+    border-radius: 10px;
+    background-color: var(bg-alt);
+}
+
+/* Default state for elements */
+element normal.normal, element alternate.normal {
+    background-color: var(bg-alt);
+    text-color: var(fg);
+}
+
+/* Selected state: Uses the 20% opacity primary color from Matugen */
+element selected normal {
+    background-color: var(selected-bg);
+    text-color: var(primary);
+}
+
+element-text {
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+element-icon {
+    size: 24px;
+    vertical-align: 0.5;
+}

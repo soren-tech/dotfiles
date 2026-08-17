@@ -1,0 +1,80 @@
+/* HyDE-style full-width wallpaper filmstrip */
+@import "/home/ms/.config/rofi/colors.rasi"
+
+* {
+    font: "JetBrains Mono 11";
+    thumb: 430px;                 /* thumbnail height */
+}
+
+window {
+    transparency:     true;
+    width:            100%;       /* edge-to-edge band, like HyDE */
+    location:         center;
+    anchor:           center;
+    border:           0;
+    border-radius:    0;
+    background-color: @bg;
+    padding:          48px 40px;
+}
+
+mainbox {
+    children: [ listview ];       /* no search bar -> clean band */
+    background-color: transparent;
+}
+
+/* shrink-to-content + centered: 1 wallpaper = centered card,
+   many wallpapers = centered horizontal row */
+listview {
+    expand:         false;
+    lines:          1;
+    columns:        64;
+    layout:         vertical;
+    fixed-height:   true;
+    fixed-columns:  false;        /* collapse empty columns */
+    spacing:        50px;
+    padding:        10px 20px;
+    cycle:          true;
+    scrollbar:      false;
+    dynamic:        false;
+    background-color: transparent;
+}
+
+element {
+    orientation:      vertical;   /* image on top, label below */
+    spacing:          0;
+    padding:          0;
+    border:           2px;
+    border-color:     transparent;
+    border-radius:    18px;
+    background-color: transparent;
+    text-color:       @fg-dim;
+    cursor:           pointer;
+}
+
+/* guaranteed selection indicator */
+element selected {
+    border-color:     @primary;
+    background-color: @selected-bg;
+    text-color:       @fg;
+}
+
+/* HyDE's solid label bar (applies when rofi propagates the
+   selected state to children; harmless if it doesn't) */
+element-text selected {
+    background-color: @primary;
+    text-color:       @bg;
+    border-radius:    0 0 16px 16px;
+}
+
+element-icon {
+    size:             @thumb;
+    background-color: transparent;
+}
+
+element-text {
+    padding:          10px 14px;
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+    text-color:       inherit;
+    background-color: transparent;
+}

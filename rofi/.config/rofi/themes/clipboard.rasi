@@ -1,0 +1,83 @@
+/* ~/.config/rofi/themes/clipboard.rasi
+   Clipboard theme for Rofi + Hyprland + Matugen
+   Intended for: cliphist list | rofi -dmenu
+*/
+
+@import "../colors.rasi"
+
+/* If relative import ever fails, use this instead:
+   @import "/home/ms/.config/rofi/colors.rasi"
+*/
+
+/* Main Rofi window */
+window {
+    width: 720px;
+    padding: 14px;
+
+    background-color: @bg;
+
+    border: 2px solid;
+    border-color: @border-color;
+    border-radius: 10px; /* Matches your Hyprland rounding */
+}
+
+/* Main layout container */
+mainbox {
+    spacing: 10px;
+}
+
+/* Search/filter bar */
+inputbar {
+    children: [ prompt, entry ];
+
+    spacing: 10px;
+    padding: 10px;
+    border-radius: 8px;
+
+    background-color: @bg-alt;
+}
+
+/* Prompt label, shown when using: rofi -dmenu -p Clipboard */
+prompt {
+    text-color: @primary;
+}
+
+/* Search entry */
+entry {
+    placeholder: "Filter clipboard history...";
+    placeholder-color: @fg-dim;
+    text-color: @fg;
+}
+
+/* Clipboard list */
+listview {
+    lines: 12;
+    columns: 1;
+
+    spacing: 4px;
+    scrollbar: false;
+    fixed-height: false;
+}
+
+/* Each clipboard entry */
+element {
+    padding: 8px;
+    border-radius: 6px;
+
+    spacing: 8px;
+
+    background-color: transparent;
+    text-color: @fg;
+}
+
+/* Selected clipboard entry */
+element selected {
+    background-color: @selected-bg;
+    text-color: @primary;
+}
+
+/* Clipboard entry text */
+element-text {
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+}

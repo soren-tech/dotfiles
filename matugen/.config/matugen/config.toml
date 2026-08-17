@@ -1,0 +1,35 @@
+# Custom ANSI hues for terminals; blend=true harmonizes them
+# with each wallpaper while keeping the hues recognizable.
+[config.custom_colors]
+red            = { color = "#e0483e", blend = true }
+bright_red     = { color = "#ff8a80", blend = true }
+green          = { color = "#3f9e4c", blend = true }
+bright_green   = { color = "#9be29b", blend = true }
+yellow         = { color = "#d8a021", blend = true }
+bright_yellow  = { color = "#ffe08a", blend = true }
+blue           = { color = "#3b62d6", blend = true }
+bright_blue    = { color = "#8fb5ff", blend = true }
+magenta        = { color = "#b04fd6", blend = true }
+bright_magenta = { color = "#e3a1ff", blend = true }
+cyan           = { color = "#2aa5a5", blend = true }
+bright_cyan    = { color = "#93e6e6", blend = true }
+
+[templates.hyprland]
+input_path  = '/home/ms/.config/matugen/templates/hyprland-colors.lua'
+output_path = '/home/ms/.config/hypr/colors.lua'
+post_hook   = 'hyprctl reload'
+
+[templates.kitty]
+input_path  = '/home/ms/.config/matugen/templates/kitty-colors.conf'
+output_path = '/home/ms/.config/kitty/themes/colors.conf'
+post_hook   = 'pkill -SIGUSR1 kitty'
+
+[templates.waybar]
+input_path  = '/home/ms/.config/matugen/templates/waybar-colors.css'
+output_path = '/home/ms/.config/waybar/colors.css'
+post_hook   = 'pkill -SIGUSR2 waybar'
+
+[templates.rofi]
+input_path  = '/home/ms/.config/matugen/templates/rofi-colors.rasi'
+output_path = '/home/ms/.config/rofi/colors.rasi'
+post_hook = ''
