@@ -1,0 +1,9 @@
+# ~/.config/starship.toml
+
+# "╭─" at the start of the top line
+[directory]
+format = "[╭─](bold white) [$path]($style)[$read_only]($read_only_style) "
+
+# "╰─" at the start of the bottom line (before ❯)
+[character]
+format = "[╰─](bold white)$symbol"

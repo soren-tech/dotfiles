@@ -201,10 +201,6 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("cliphist wipe")
     hl.exec_cmd("udiskie &")
     hl.exec_cmd("fcitx5 -d")
-
-    hl.exec_cmd("obsidian &")
-    hl.exec_cmd("anki &")
-    hl.exec_cmd("zotero &")
 end)
 
 -- Package Manager Menu (Toggle with MainMod + P)
